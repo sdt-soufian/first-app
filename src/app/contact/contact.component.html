@@ -1,0 +1,63 @@
+<!--<h1>{{getTitle() |  titlecase }}</h1>
+<h2>{{date}}</h2>
+<h2>{{date | date:'yyyy-MM-dd'}}</h2>
+<h2>{{montant | currency:'EUR':'code'}}</h2>
+<p>{{testpipe | resume: 11}}</p>-->
+<div *ngIf= "contacts.length > 0 then LContactes; else noContactes"></div>
+<!--<div *ngIf= "contacts.length == 0">
+    pas de contact
+</div>-->
+<ng-template #LContactes>
+  <h1>List des contactes</h1> 
+  <ul>
+      <li *ngFor="let contact of contacts; index as i">
+          {{i+1}} - {{contact}}
+      </li>
+  </ul>
+  <ul>
+      <li *ngFor="let contNom of contact2">
+          {{contNom.name}} - {{contNom.tel}} - {{contNom.email}}
+      </li>
+  </ul>
+  <!--<table style="width: 50%;">
+    <tr>
+        <th *ngFor="let inf of info">{{inf | titlecase}}</th>
+    </tr>
+    <tr *ngFor="let contInf of contact2">
+        <td>{{contInf.name}} </td>
+        <td>{{contInf.tel}} </td>
+        <td>{{contInf.email}} </td>
+        <td><button class="btn-supp">Supprimer</button></td>
+
+    </tr>
+  </table>-->
+  <table class="table table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">name</th>
+        <th scope="col">mobile</th>
+        <th scope="col">email</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contInf of contact2">
+        <th scope="row">{{contInf.id}} </th>
+        <td>{{contInf.name}} </td>
+        <td>{{contInf.tel}} </td>
+        <td>{{contInf.email}} </td>
+        <td><button type="button" class="btn btn-danger">Delete</button></td>
+        <td><button type="button" class="btn btn-success">Edit</button></td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>
+<ng-template #noContactes>
+    pas de contactes
+</ng-template>
+<!--<div [hidden] = "contacts.length == 0">
+    HHHHHHHHH
+</div>-->
+
