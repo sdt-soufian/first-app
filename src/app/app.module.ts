@@ -6,6 +6,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ResumePipe } from './resume.pipe';
 import { MaDirectiveComponent } from './ma-directive/ma-directive.component';
 import { MyDirectiveDirective } from './my-directive.directive';
+import { FormControl, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MyDirectiveDirective } from './my-directive.directive';
     MyDirectiveDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
