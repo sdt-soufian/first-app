@@ -80,7 +80,7 @@ export class ContactComponent implements OnInit {
 
   Submit(){
     const contactYes = this.contact2.filter((item) =>{
-      return item.name === this.name;
+      return item.name === this.MyFormGroup.value.name;
     })
     if(contactYes.length > 0) {
       console.log("contactYes.length=", contactYes);
